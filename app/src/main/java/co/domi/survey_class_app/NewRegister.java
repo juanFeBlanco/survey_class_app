@@ -32,6 +32,7 @@ public class NewRegister extends AppCompatActivity {
                         String currentStudentsR = info.getString("list", "vacío");
                         info.edit().putString("list", currentStudentsR + "\n" + newStudent.toString()).apply();
                         Intent prepAct = new Intent(this, PreparationActivities1.class);
+                        finish();
                         startActivity(prepAct);
                     }
                 }

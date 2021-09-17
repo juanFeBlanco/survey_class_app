@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         listNamesUI.setText("No hay estudiantes registrados aún");
         savedInfo.edit().putString("list", "vacío").apply();
         savedInfo.edit().putString("listScores","vacío").apply();
+        savedInfo.edit().putString("listScores2","vacío").apply();
 
         registerBtnUI.setOnClickListener(
                 (view) -> {

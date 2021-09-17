@@ -2,6 +2,7 @@ package co.domi.survey_class_app;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -58,7 +59,9 @@ public class PreparationActivities1 extends AppCompatActivity{
                     SharedPreferences info = getSharedPreferences("studentsList",MODE_PRIVATE);
                     String scores = info.getString("listScores", "vacío");
                     info.edit().putString("listScores", scores + "\n" + score).apply();
-                    Toast.makeText(this, scores+"", Toast.LENGTH_SHORT).show();
+                    Intent ending = new Intent(this, selfEvaluationActivity.class);
+                    finish();
+                    startActivity(ending);
                 }
         );
         //1:47:50
