@@ -50,15 +50,14 @@ public class selfEvaluationActivity extends AppCompatActivity {
                 (view) -> {
                     int score = 0;
                     if(cB1.isChecked()){
-                        score+=1;
+                        score+=3;
                     }
                     if(cB2.isChecked()){
                         score+=3;
                     }
 
                     SharedPreferences info = getSharedPreferences("studentsList",MODE_PRIVATE);
-                    String scores = info.getString("listScores2", "vacío");
-                    info.edit().putString("listScores2", scores + "\n" + score).apply();
+                    info.edit().putString("listScores2", score + ";").apply();
                     finish();
                 }
         );

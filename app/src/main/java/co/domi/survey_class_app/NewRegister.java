@@ -26,16 +26,33 @@ public class NewRegister extends AppCompatActivity {
 
         continueBtnUI.setOnClickListener(
                 (view) -> {
-                    if(!nameUI.getText().toString().equals("") && !codeUI.getText().toString().equals("")){
-                        Student newStudent = new Student(nameUI.getText().toString(), codeUI.getText().toString());
+                    if(!nameUI.getText().toString().equals("") && !codeUI.getText().toString().equals("") && !verifyInput()){
                         SharedPreferences info = getSharedPreferences("studentsList",MODE_PRIVATE);
-                        String currentStudentsR = info.getString("list", "vacío");
-                        info.edit().putString("list", currentStudentsR + "\n" + newStudent.toString()).apply();
+                        info.edit().putString("names", nameUI.getText().toString() + ";").apply();
+                        info.edit().putString("codes", codeUI.getText().toString() + ";").apply();
+
                         Intent prepAct = new Intent(this, PreparationActivities1.class);
                         finish();
                         startActivity(prepAct);
+                    }else{
+                        Toast.makeText(this, "Campos no rellenados o código repetido", Toast.LENGTH_SHORT).show();
                     }
                 }
         );
+    }
+
+    private boolean verifyInput() {
+        boolean found = false;
+        String code = codeUI.getText().toString();
+        SharedPreferences info = getSharedPreferences("studentsList",MODE_PRIVATE);
+        String codes = info.getString("codes", "vacío");
+        String[] codesS = codes.split(";");
+
+        for(int i = 0; i < codesS.length && !found; i++){
+            if(code.equals(codesS[i])){
+                found = true;
+            }
+        }
+        return found;
     }
 }

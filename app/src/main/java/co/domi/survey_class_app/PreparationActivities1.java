@@ -57,8 +57,7 @@ public class PreparationActivities1 extends AppCompatActivity{
                         score+=3;
                     }
                     SharedPreferences info = getSharedPreferences("studentsList",MODE_PRIVATE);
-                    String scores = info.getString("listScores", "vacío");
-                    info.edit().putString("listScores", scores + "\n" + score).apply();
+                    info.edit().putString("listScores", score + ";").apply();
                     Intent ending = new Intent(this, selfEvaluationActivity.class);
                     finish();
                     startActivity(ending);
