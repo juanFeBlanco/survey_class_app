@@ -2,6 +2,7 @@ package co.domi.survey_class_app;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
@@ -30,7 +31,8 @@ public class NewRegister extends AppCompatActivity {
                         SharedPreferences info = getSharedPreferences("studentsList",MODE_PRIVATE);
                         String currentStudentsR = info.getString("list", "vacío");
                         info.edit().putString("list", currentStudentsR + "\n" + newStudent.toString()).apply();
-                        //changeScreen
+                        Intent prepAct = new Intent(this, PreparationActivities1.class);
+                        startActivity(prepAct);
                     }
                 }
         );

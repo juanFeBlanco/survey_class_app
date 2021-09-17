@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/ICESI/Quinto_semestre/Eocsistemas/SEMANA 5/quizJFBT/app/src/main/res/drawable/colorbtn.xml" value="0.2703125" />
+        <entry key="..\:/ICESI/Quinto_semestre/Eocsistemas/SEMANA 5/quizJFBT/app/src/main/res/drawable/notaccesiblecolorbtn.xml" value="0.14635416666666667" />
         <entry key="..\:/ICESI/Quinto_semestre/Eocsistemas/SEMANA 5/quizJFBT/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/ICESI/Quinto_semestre/Eocsistemas/SEMANA 5/quizJFBT/app/src/main/res/layout/activity_new_register.xml" value="0.264" />
+        <entry key="..\:/ICESI/Quinto_semestre/Eocsistemas/SEMANA 5/quizJFBT/app/src/main/res/layout/activity_preparation_activities1.xml" value="0.264" />
       </map>
     </option>
   </component>
